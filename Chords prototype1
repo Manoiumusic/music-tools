@@ -1,0 +1,36 @@
+pitches = "CDEFGABCDEF"
+root = input("Enter chord root(C-G): ")
+quality = input("Enter chord quality(M or m): ")
+
+if quality == "M":
+ M_whks = "034"
+ M_nwks = "125"
+ if str(pitches.index(root)) in M_whks:
+  t = pitches.index(root) + 2
+  f = pitches.index(root) + 4
+  third = pitches[t]
+  fifth = pitches[f]
+ elif str(pitches.index(root)) in M_nwks:
+  t = pitches.index(root) + 2
+  f = pitches.index(root) + 4
+  third = pitches[t] + str("#")
+  fifth = pitches[f]
+
+
+if quality == "m":
+ m_whks = "125"
+ m_nwks = "034"
+ if str(pitches.index(root)) in m_whks:
+  t = pitches.index(root) + 2
+  f = pitches.index(root) + 4
+  third = pitches[t]
+  fifth = pitches[f]
+ elif str(pitches.index(root)) in m_nwks:
+  t = pitches.index(root) + 2
+  f = pitches.index(root) + 4
+  third = pitches[t] + str("b")
+  fifth = pitches[f]
+ 
+
+print(root, third, fifth)
+
